@@ -21,7 +21,7 @@ func check(e error) {
 }
 
 func readFile() InputPair {
-	f, err := os.Open("day1/p1input.txt")
+	f, err := os.Open("day1/input.txt")
 	defer f.Close()
 
 	check(err)

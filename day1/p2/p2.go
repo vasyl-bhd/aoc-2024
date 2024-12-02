@@ -1,6 +1,7 @@
 package main
 
 import (
+	aoc_2024 "aoc-2024"
 	"bufio"
 	"fmt"
 	"os"
@@ -13,17 +14,11 @@ type InputPair struct {
 	second []int
 }
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 func readFile() InputPair {
-	f, err := os.Open("day1/p2/input.txt")
+	f, err := os.Open("day1/input.txt")
 	defer f.Close()
 
-	check(err)
+	aoc_2024.Check(err)
 
 	scanner := bufio.NewScanner(f)
 	scanner.Split(bufio.ScanLines)
@@ -35,7 +30,7 @@ func readFile() InputPair {
 
 		num, err := strconv.Atoi(str[0])
 		num1, err := strconv.Atoi(str[1])
-		check(err)
+		aoc_2024.Check(err)
 
 		first = append(first, num)
 		second = append(second, num1)
