@@ -22,3 +22,16 @@ func StringsToInts(ss []string) []int {
 
 	return res
 }
+
+func StrToUInt64(ss []string) []uint64 {
+	res := make([]uint64, len(ss))
+	for i, s := range ss {
+		num, err := strconv.ParseInt(s, 10, 64)
+		if err != nil {
+			panic(err)
+		}
+		res[i] = uint64(num)
+	}
+
+	return res
+}

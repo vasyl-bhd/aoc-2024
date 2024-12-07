@@ -1,5 +1,3 @@
-#!/bin/bash
-
 base_folder="."
 
 # Find the highest day folder
