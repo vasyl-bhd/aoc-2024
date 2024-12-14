@@ -63,17 +63,26 @@ func StringsToInts(ss []string) []int {
 func StrToUInt64(ss []string) []uint64 {
 	res := make([]uint64, len(ss))
 	for i, s := range ss {
-		res[i] = SafeStrToInt(s)
+		res[i] = SafeStrToUint64(s)
 	}
 
 	return res
 }
 
-func SafeStrToInt(ss string) uint64 {
+func SafeStrToUint64(ss string) uint64 {
 	num, err := strconv.ParseInt(ss, 10, 64)
 	if err != nil {
 		panic(err)
 	}
 
 	return uint64(num)
+}
+
+func SafeStrToInt(ss string) int {
+	num, err := strconv.Atoi(ss)
+	if err != nil {
+		panic(err)
+	}
+
+	return num
 }

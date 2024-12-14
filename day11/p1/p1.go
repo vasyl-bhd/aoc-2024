@@ -27,7 +27,7 @@ func makeNewGeneration(input []string) []string {
 			res = append(res, firstHalf)
 			res = append(res, secondHalf)
 		} else {
-			intVal := aoc_2024.SafeStrToInt(val)
+			intVal := aoc_2024.SafeStrToUint64(val)
 			intVal = intVal * 2024
 			res = append(res, strconv.FormatUint(intVal, 10))
 		}
